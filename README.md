@@ -4,6 +4,8 @@
 ![platform](https://img.shields.io/badge/platform-macos-lightgrey.svg)  ![language](https://img.shields.io/badge/language-python-blue.svg)
  [![GitHub license](https://img.shields.io/github/license/TKkk-iOSer/wechat-workflow.svg)](https://github.com/echo-cool/Alfred-Find-Expression-package/blob/master/LICENSE)
  
+ ![logo](./icon.png)
+ 
 ## Demo
 ![image](./demo.gif)
 
