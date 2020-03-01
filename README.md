@@ -1,4 +1,4 @@
-# Alfred-Find-Expression-package
+# Alfred-Find-Meme
 用Alfred快速找到表情包 😂😂
 
 ![platform](https://img.shields.io/badge/platform-macos-lightgrey.svg)  ![language](https://img.shields.io/badge/language-python-blue.svg)
