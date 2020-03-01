@@ -28,7 +28,8 @@ def main(wf):
     # 向结果中添加显示内容
     number = 0
     tmp = []
-    tmp += wf.filter(input_data, data.keys(), key=lambda x: x, max_results=20)
+    tmp += wf.filter(input_data, data.keys(), key=lambda x: x,
+                     max_results=20, match_on=17)
     for i in tmp:
         number += 1
         url = data[i]['url']
