@@ -20,9 +20,9 @@ python2.7
 
 ## 安装
 
-[下载地址1](https://github.com/echo-cool/Alfred-Find-Expression-package/raw/master/Find%20Expression%20package%EF%BD%9E.alfredworkflow) 
+[下载地址1](https://github.com/echo-cool/Alfred-Find-Expression-package/raw/master/Find%20Meme%EF%BD%9E.alfredworkflow) 
 
-[下载地址2](http://photos-picgo.oss-cn-beijing.aliyuncs.com/Find%20Expression%20package%EF%BD%9E.alfredworkflow)
+[下载地址2](http://photos-picgo.oss-cn-beijing.aliyuncs.com/Find%20Meme%EF%BD%9E.alfredworkflow)
 
 下载完成后，点击下载的文件，之后点击导入即可
 

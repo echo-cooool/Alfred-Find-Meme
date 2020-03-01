@@ -21,9 +21,12 @@ def downloader(url):
 
 
 def main(wf):
-
-    args = wf.args
-    input_data = args[0]
+    try:
+        args = wf.args
+        input_data = args[0]
+    except:
+        wf.add_item("请输入查询内容（拼音）", '数据加载完成!', icon="icon.png")
+        wf.send_feedback()
     # 自定义的程序
     # 向结果中添加显示内容
     number = 0
