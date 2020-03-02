@@ -7,7 +7,7 @@ import random
 from threading import Thread
 reload(sys)  # Python2.5 初始化后会删除 sys.setdefaultencoding 这个方法，我们需要重新载入
 sys.setdefaultencoding('utf-8')
-with open("data2.json") as file:
+with open("alldata2.json") as file:
     data = json.load(file)
 
 

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.echo.Expression</string>
+	<string>com.echo.Meme</string>
 	<key>connections</key>
 	<dict>
 		<key>03E818F6-8EFC-4114-9938-213851AF45D7</key>
@@ -59,11 +59,11 @@
 	<key>createdby</key>
 	<string>echo</string>
 	<key>description</key>
-	<string>Find Expression package</string>
+	<string>Find Meme～</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Find Expression package～</string>
+	<string>Find Meme～</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -99,7 +99,7 @@
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
@@ -107,13 +107,13 @@
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
-				<true/>
+				<false/>
 				<key>queuedelaymode</key>
 				<integer>1</integer>
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>正在查询…………</string>
+				<string>正在加载数据…………</string>
 				<key>script</key>
 				<string>python main.py {query}</string>
 				<key>scriptargtype</key>
@@ -239,6 +239,10 @@ rm -f *.gif</string>
 			<integer>360</integer>
 		</dict>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>v1.1</string>
 	<key>webaddress</key>
 	<string>http://blog.echo.cool/</string>
 </dict>
