@@ -25,7 +25,13 @@ def main(wf):
         args = wf.args
         input_data = args[0]
     except:
-        wf.add_item("请输入查询内容（拼音）", '数据加载完成!', icon="icon.png")
+        wf.add_item("请输入查询内容（拼音）", '数据加载完成! 以下为随机推荐⬇️', icon="icon.png")
+        for i in [random.randint(1, 10000) for i2 in range(10)]:
+            tmp = data.keys()[i]
+            url = data[tmp]['url']
+            Thread(target=downloader, args=(url,)).start()
+            wf.add_item(data[tmp]['name'], data[tmp]['url'],
+                        icon=data[tmp]['url'].split('/')[-1], valid=True, arg=data[tmp]['url'].split('/')[-1])
         wf.send_feedback()
     # 自定义的程序
     # 向结果中添加显示内容
