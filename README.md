@@ -10,7 +10,7 @@
 ![image](./demo.gif)
 
 ## Features
-
++ 云端数据库（LeanCloud）
 + 启动`Alfred`，输入`bq`启动该 workflow。
 + 使用方法 `bq {query}`
 + 一键调出搜索页面, 需要先在Alfred Workflow中设置热键
