@@ -18,7 +18,7 @@ header = {
 
 def get_keyword(keyword):
     global api_url
-    data = "where=%7B%22keyword%22%3A%7B%22%24regex%22%3A%22%5E"+keyword + \
+    data = "where=%7B%22keyword%22%3A%7B%22%24regex%22%3A%22%5E.*"+keyword + \
         ".*%22%7D%7D&limit=20&&order=-updatedAt"
     api_url += "?" + data
     res = web.get(api_url, headers=header)
