@@ -5,10 +5,24 @@ from datetime import datetime
 from workflow import Workflow, web
 import random
 from threading import Thread
+
 reload(sys)  # Python2.5 初始化后会删除 sys.setdefaultencoding 这个方法，我们需要重新载入
 sys.setdefaultencoding('utf-8')
-with open("alldata2.json") as file:
-    data = json.load(file)
+api_url = "https://leancloud.cn:443/1.1/classes/alldata2"
+header = {
+    "X-LC-Id": "B31gHGxVh5go1JPV6OpeRgtq-gzGzoHsz",
+    "X-LC-Key": "0YVx0en5m7TpDJF0wY0D1W03",
+    "Content-Type": "application/json"
+}
+
+
+def get_keyword(keyword):
+    global api_url
+    data = "where=%7B%22keyword%22%3A%7B%22%24regex%22%3A%22%5E"+keyword + \
+        ".*%22%7D%7D&limit=20&&order=-updatedAt"
+    api_url += "?" + data
+    res = web.get(api_url, headers=header)
+    return res.json()['results']
 
 
 def downloader(url):
@@ -21,30 +35,16 @@ def downloader(url):
 
 
 def main(wf):
-    try:
-        args = wf.args
-        input_data = args[0]
-    except:
-        wf.add_item("请输入查询内容（拼音）", '数据加载完成! 以下为随机推荐⬇️', icon="icon.png")
-        for i in [random.randint(1, 10000) for i2 in range(10)]:
-            tmp = data.keys()[i]
-            url = data[tmp]['url']
-            Thread(target=downloader, args=(url,)).start()
-            wf.add_item(data[tmp]['name'], data[tmp]['url'],
-                        icon=data[tmp]['url'].split('/')[-1], valid=True, arg=data[tmp]['url'].split('/')[-1])
-        wf.send_feedback()
+    args = wf.args
+    input_data = args[0]
     # 自定义的程序
     # 向结果中添加显示内容
-    number = 0
-    tmp = []
-    tmp += wf.filter(input_data, data.keys(), key=lambda x: x,
-                     max_results=20, match_on=17)
+    tmp = get_keyword(input_data)
     for i in tmp:
-        number += 1
-        url = data[i]['url']
+        url = i['url']
         Thread(target=downloader, args=(url,)).start()
-        wf.add_item(data[i]['name'], data[i]['url'],
-                    icon=data[i]['url'].split('/')[-1], valid=True, arg=data[i]['url'].split('/')[-1])
+        wf.add_item(i['name'], i['url'],
+                    icon=i['url'].split('/')[-1], valid=True, arg=i['url'].split('/')[-1])
 
     wf.send_feedback()
 
@@ -56,4 +56,5 @@ if __name__ == '__main__':
     # 如果针对的是 Alfred3，那么应该使用 wf = Workflow3()
     # 设置日志对象
     log = wf.logger
+
     wf.run(main)  # 调用主函数

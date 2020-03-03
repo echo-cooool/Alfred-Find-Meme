@@ -28,9 +28,9 @@ python2.7
 
 下载完成后，点击下载的文件，之后点击导入即可
 
-![install](./install.jpeg)
-
 之后帮我点个star呗～🤝🤝
+
+![install](./install.jpeg)
 
 
 
@@ -41,6 +41,8 @@ python2.7
 + 界面美化
 
 ## CHANGELOG
+#### 1.2
++ 删除本地数据 改用Leancloud REST API
 #### 1.1
 
 + 优化搜索速度

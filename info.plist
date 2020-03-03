@@ -99,21 +99,21 @@
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
 				<string>bq</string>
 				<key>queuedelaycustom</key>
-				<integer>3</integer>
+				<integer>1</integer>
 				<key>queuedelayimmediatelyinitially</key>
 				<false/>
 				<key>queuedelaymode</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>正在加载数据…………</string>
+				<string>正在搜索数据…………</string>
 				<key>script</key>
 				<string>python main.py {query}</string>
 				<key>scriptargtype</key>
@@ -213,9 +213,9 @@ rm -f *.gif</string>
 		<key>0ADEAC00-83DB-4E80-A19D-13D7B1447707</key>
 		<dict>
 			<key>xpos</key>
-			<integer>125</integer>
+			<integer>105</integer>
 			<key>ypos</key>
-			<integer>80</integer>
+			<integer>155</integer>
 		</dict>
 		<key>0EBE7184-22B8-4392-8998-14B7CE779D79</key>
 		<dict>
