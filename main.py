@@ -18,7 +18,7 @@ header = {
 
 def get_keyword(keyword):
     global api_url
-    data = "where=%7B%22keyword%22%3A%7B%22%24regex%22%3A%22%5E.*"+keyword + \
+    data = "where=%7B%22keyword%22%3A%7B%22%24regex%22%3A%22%5E"+keyword + \
         ".*%22%7D%7D&limit=20&&order=-updatedAt"
     api_url += "?" + data
     res = web.get(api_url, headers=header)
@@ -39,12 +39,20 @@ def main(wf):
     input_data = args[0]
     # 自定义的程序
     # 向结果中添加显示内容
-    tmp = get_keyword(input_data)
-    for i in tmp:
-        url = i['url']
-        Thread(target=downloader, args=(url,)).start()
-        wf.add_item(i['name'], i['url'],
-                    icon=i['url'].split('/')[-1], valid=True, arg=i['url'].split('/')[-1])
+    tmp = []
+    try:
+        tmp += get_keyword(input_data)
+        for i in tmp:
+            url = i['url']
+            Thread(target=downloader, args=(url,)).start()
+            wf.add_item(i['name'], i['url'],
+                        icon=i['url'].split('/')[-1], valid=True, arg=i['url'].split('/')[-1])
+        if len(tmp) == 0:
+            wf.add_item("无结果", "无结果",
+                        icon="icon.png", valid=True, arg="icon.png")
+    except Exception as e:
+        wf.add_item("无结果", "无结果",
+                    icon="icon.png", valid=True, arg="icon.png")
 
     wf.send_feedback()
 
